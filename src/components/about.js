@@ -23,7 +23,7 @@ const Adobe = styled.img({
         height: 90,
     },
     [mq[2]]: {
-        height: 60,
+        height: 50,
     },
 })
 

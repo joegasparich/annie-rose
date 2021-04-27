@@ -120,11 +120,26 @@ const Project = ({
                             css={{
                                 display: "inline-block",
                                 verticalAlign: "top",
+
+                                [mq[2]]: {
+                                    float: "right",
+                                },
                             }}
                         >
                             <img
                                 src={button}
-                                css={{ height: 45, margin: 0, marginLeft: 30 }}
+                                css={{
+                                    height: 45,
+                                    margin: 0,
+                                    marginLeft: 30,
+
+                                    [mq[0]]: {
+                                        height: 40,
+                                    },
+                                    [mq[2]]: {
+                                        height: 28,
+                                    },
+                                }}
                             />
                         </ScrollButton>
                     </h1>
@@ -195,7 +210,7 @@ const Project = ({
                         width: "40%",
                         background: colours.white,
                         boxShadow: boxShadow,
-                        objectFit: "cover",
+                        // objectFit: "cover",
 
                         [mq[0]]: {
                             width: "initial",
@@ -210,7 +225,7 @@ const Project = ({
                         width: "40%",
                         background: colours.white,
                         boxShadow: boxShadow,
-                        objectFit: "cover",
+                        // objectFit: "cover",
 
                         [mq[0]]: {
                             width: "initial",
