@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react"
 import * as React from "react"
+import { Helmet } from "react-helmet"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -33,6 +34,11 @@ import "./base.css"
 const Layout = ({ children, style }) => {
     return (
         <React.Fragment>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Annie Rose</title>
+                <link rel="canonical" href="https://annierose.nz" />
+            </Helmet>
             <Header />
             <div
                 css={[
