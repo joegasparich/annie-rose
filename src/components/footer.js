@@ -22,7 +22,7 @@ const Footer = () => (
         <div
             css={{
                 backgroundImage: `url(${bannerImage})`,
-                height: 140,
+                height: 100,
                 width: "100vw",
                 backgroundSize: "cover",
                 backgroundPosition: "top",

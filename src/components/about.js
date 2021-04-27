@@ -14,8 +14,7 @@ import ps from "../images/adobe/ps.svg"
 import xd from "../images/adobe/xd.svg"
 import qualifications from "../images/qualifications.svg"
 import photo from "../images/photo.jpg"
-
-const CIRCLE_SIZE = 100
+import arrow from "../images/arrow.png"
 
 const Adobe = styled.img({
     margin: 0,
@@ -185,7 +184,16 @@ const About = ({ style }) => (
                         },
                     }}
                 >
-                    <div css={{ marginLeft: 20 }}>
+                    <div css={{ marginLeft: 20, position: "relative" }}>
+                        <img
+                            src={arrow}
+                            alt="arrow"
+                            css={{
+                                position: "absolute",
+                                left: -230,
+                                [mq[0]]: { display: "none" },
+                            }}
+                        />
                         <h1
                             css={{
                                 color: colours.red,

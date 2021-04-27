@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react"
 import React from "react"
-import { boxShadow, colours, mq } from "../constants"
 
+import { boxShadow, colours, mq } from "../constants"
 import Section from "./section"
+import ScrollButton from "./scrollButton"
 
 const Fork = ({ colour, mirror, style }) => (
     <div
@@ -55,6 +56,7 @@ const Project = ({
     images,
     primaryColour,
     secondaryColour,
+    button,
     mirror,
 }) => (
     <React.Fragment>
@@ -68,7 +70,7 @@ const Project = ({
             css={{
                 backgroundColor: secondaryColour,
                 margin: "0 56px",
-                padding: "42px 95px",
+                padding: "42px 70px",
 
                 [mq[2]]: {
                     margin: 0,
@@ -89,7 +91,7 @@ const Project = ({
             >
                 <div
                     css={{
-                        width: "28vw",
+                        width: "32vw",
                         overflow: "hidden",
 
                         [mq[0]]: {
@@ -101,7 +103,7 @@ const Project = ({
                     <h1
                         css={{
                             color: primaryColour,
-                            fontSize: 45,
+                            fontSize: 42,
                             textTransform: "uppercase",
 
                             [mq[0]]: {
@@ -113,12 +115,24 @@ const Project = ({
                         }}
                     >
                         {title}
+                        <ScrollButton
+                            targetId="work"
+                            css={{
+                                display: "inline-block",
+                                verticalAlign: "top",
+                            }}
+                        >
+                            <img
+                                src={button}
+                                css={{ height: 45, margin: 0, marginLeft: 30 }}
+                            />
+                        </ScrollButton>
                     </h1>
                     <p
                         css={{
                             color: primaryColour,
                             fontSize: 22,
-                            lineHeight: "42px",
+                            lineHeight: "50px",
                             letterSpacing: 1.38,
 
                             [mq[0]]: {
@@ -179,7 +193,6 @@ const Project = ({
                     alt={`${title} 2`}
                     css={{
                         width: "40%",
-                        height: 325,
                         background: colours.white,
                         boxShadow: boxShadow,
                         objectFit: "cover",
@@ -195,7 +208,6 @@ const Project = ({
                     alt={`${title} 3`}
                     css={{
                         width: "40%",
-                        height: 325,
                         background: colours.white,
                         boxShadow: boxShadow,
                         objectFit: "cover",

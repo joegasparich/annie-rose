@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react"
+import styled from "@emotion/styled"
 
 import WorkCarousel from "./workCarousel"
 import Project from "./project"
 import Marker from "./marker"
 import ScrollButton from "./scrollButton"
+import { colours, mq } from "../constants"
 
 import artimiss1 from "../images/artimiss/artimiss1.jpg"
 import artimiss2 from "../images/artimiss/artimiss2.jpg"
@@ -21,8 +23,11 @@ import thatsit3 from "../images/thatsit/thatsit3.jpg"
 import votemoji1 from "../images/votemoji/votemoji1.jpg"
 import votemoji2 from "../images/votemoji/votemoji2.jpg"
 import votemoji3 from "../images/votemoji/votemoji3.jpg"
-import { colours, mq } from "../constants"
-import styled from "@emotion/styled"
+import arrowBlue from "../images/buttons/arrow_blue.png"
+import arrowGreen from "../images/buttons/arrow_green.png"
+import arrowOrange from "../images/buttons/arrow_orange.png"
+import arrowRed from "../images/buttons/arrow_red.png"
+import arrowPurple from "../images/buttons/arrow_purple.png"
 
 const items = [
     {
@@ -30,18 +35,22 @@ const items = [
         description:
             "Be heard not hurt! A jewellery line with an in-built alarm system that connects to your smartphone. With this app, you can share your location, contact authorities and loved ones, and record audio!",
         targetId: "artimiss",
+        carouselImage: artimiss1,
         images: [artimiss1, artimiss2, artimiss3],
         primaryColour: colours.artimissPrimary,
         secondaryColour: colours.artimisSecondary,
+        button: arrowBlue,
     },
     {
-        title: "That's It AKL",
+        title: "That's It, AKL",
         description:
             "This social media campaign was a collaboration piece with Auckland Council. Our goal was to engage the general public and inspire them to have their say in the Auckland Council’s 10 Year Plan.",
         targetId: "thatsit",
+        carouselImage: thatsit1,
         images: [thatsit1, thatsit2, thatsit3],
         primaryColour: colours.thatsItPrimary,
         secondaryColour: colours.thatsItSecondary,
+        button: arrowPurple,
         mirror: true,
     },
     {
@@ -49,18 +58,22 @@ const items = [
         description:
             "This app creates custom DIY skin care to help you, and the environment. This easy to use app only takes a few quick questions about your skin before you receive a personalised recipe!",
         targetId: "skinfuel",
+        carouselImage: skinfuel1,
         images: [skinfuel1, skinfuel2, skinfuel3],
         primaryColour: colours.skinFuelPrimary,
         secondaryColour: colours.skinFuelSecondary,
+        button: arrowRed,
     },
     {
         title: "Votemoji",
         description:
             "This activation was created to coincide with the 2020 election. With a voting poll upstairs, we helped today’s youth identify their core values by creating their own personalised avatar and badge.",
         targetId: "votemoji",
+        carouselImage: votemoji2,
         images: [votemoji1, votemoji2, votemoji3],
         primaryColour: colours.votemojiPrimary,
         secondaryColour: colours.votemojiSecondary,
+        button: arrowOrange,
         mirror: true,
     },
     {
@@ -68,9 +81,11 @@ const items = [
         description:
             "We all know how bad fast fashion is for the environment. This platform allows you to sell, swap and recycle old clothes using tutorial videos and blog posts. Share your clothes, repair the planet!",
         targetId: "sharepair",
+        carouselImage: sharepair1,
         images: [sharepair1, sharepair2, sharepair3],
         primaryColour: colours.sharePairPrimary,
         secondaryColour: colours.sharePairSecondary,
+        button: arrowGreen,
     },
 ]
 
@@ -132,7 +147,7 @@ const Work = ({ style }) => (
             colour={colours.blue}
             left={200}
             style={{
-                marginTop: 150,
+                marginTop: 100,
                 zIndex: 1,
                 [mq[2]]: {
                     marginTop: 50,
@@ -142,11 +157,11 @@ const Work = ({ style }) => (
         <div
             css={{
                 position: "absolute",
-                top: 400,
+                top: 350,
                 left: 250,
                 zIndex: 1,
                 [mq[0]]: {
-                    top: 150,
+                    top: 75,
                     left: 70,
                 },
                 [mq[2]]: {

@@ -43,13 +43,11 @@ const Circle = styled.div({
 })
 const buttonStyles = css({
     marginRight: 30,
-    marginBottom: 100,
+    marginBottom: 50,
     padding: 0,
     borderRadius: 275 / 2,
     [mq[0]]: {
         borderRadius: 200 / 2,
-        marginRight: 30,
-        marginBottom: 50,
     },
     [mq[1]]: {
         margin: 10,
@@ -91,7 +89,8 @@ const WorkCarousel = ({ items, style, defaultBackground }) => {
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        padding: "125px 0",
+                        paddingTop: "15vh",
+                        paddingLeft: "30vw",
 
                         [mq[2]]: {
                             padding: "25px 0",
@@ -102,13 +101,13 @@ const WorkCarousel = ({ items, style, defaultBackground }) => {
             >
                 <Section
                     css={{
-                        marginLeft: 475,
+                        margin: "auto",
                         flexWrap: "wrap",
                         justifyContent: "center",
                         padding: "0 50px",
                         maxWidth: 1000,
                         [mq[0]]: {
-                            margin: "350px auto 0",
+                            margin: "250px auto 0",
                             padding: 0,
                         },
                         [mq[2]]: {
@@ -121,7 +120,9 @@ const WorkCarousel = ({ items, style, defaultBackground }) => {
                             key={item.title}
                             targetId={item.targetId}
                             style={buttonStyles}
-                            onMouseEnter={() => setBackground(item.images[0])}
+                            onMouseEnter={() =>
+                                setBackground(item.carouselImage)
+                            }
                         >
                             <Circle>{item.title}</Circle>
                         </ScrollButton>

@@ -17,7 +17,7 @@ const Circle = styled.div({
     width: 200,
     height: 200,
     borderRadius: 200 / 2,
-    fontSize: 38,
+    fontSize: 32,
     fontWeight: "bold",
     textTransform: "uppercase",
     boxShadow: boxShadow,
