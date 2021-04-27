@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react"
-import { colours } from "../constants"
+import { colours, mq } from "../constants"
 
 import bannerImage from "../images/banner.svg"
 
@@ -11,6 +11,10 @@ const Footer = () => (
                 margin: "10px 100px",
                 textAlign: "right",
                 color: colours.red,
+
+                [mq[2]]: {
+                    margin: "10px 20px",
+                },
             }}
         >
             Website by Joe Gasparich
@@ -19,7 +23,9 @@ const Footer = () => (
             css={{
                 backgroundImage: `url(${bannerImage})`,
                 height: 140,
+                width: "100vw",
                 backgroundSize: "cover",
+                backgroundPosition: "top",
             }}
         />
     </footer>

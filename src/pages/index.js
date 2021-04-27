@@ -7,7 +7,7 @@ import Contact from "../components/contact"
 
 const IndexPage = () => (
     <Layout style={{}}>
-        <About style={{ paddingTop: 35, marginTop: 90 }} />
+        <About />
         <Work style={{ paddingTop: 50 }} />
         <Contact />
     </Layout>

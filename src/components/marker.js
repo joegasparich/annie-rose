@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react"
-import { colours } from "../constants"
-
-const THICKNESS = 25
+import { colours, mq } from "../constants"
 
 const Marker = ({ text, colour, size, left, style }) => (
     <div
@@ -13,7 +11,7 @@ const Marker = ({ text, colour, size, left, style }) => (
                 height: size,
                 left: left,
                 borderRadius: size / 2,
-                border: `${THICKNESS}px solid ${colour ?? colours.red}`,
+                border: `${25}px solid ${colour ?? colours.red}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -22,14 +20,30 @@ const Marker = ({ text, colour, size, left, style }) => (
                 fontWeight: "bold",
                 textTransform: "uppercase",
 
+                [mq[2]]: {
+                    width: 150,
+                    height: 150,
+                    left: "50vw",
+                    borderRadius: 75,
+                    fontSize: 25,
+                    border: `${12}px solid ${colour ?? colours.red}`,
+                },
+
                 "&::before": {
                     content: "''",
                     position: "absolute",
-                    width: left + THICKNESS / 2,
-                    height: THICKNESS,
+                    width: left + 25 / 2,
+                    height: 25,
                     background: colour ?? colours.red,
-                    top: size / 2 - THICKNESS * 1.5,
-                    left: -(left + THICKNESS),
+                    top: size / 2 - 50,
+                    left: -(left + 25),
+
+                    [mq[2]]: {
+                        width: "calc(50vw + 12px)",
+                        height: 12,
+                        top: 56,
+                        left: "calc(-50vw - 12px)",
+                    },
                 },
             },
             style,

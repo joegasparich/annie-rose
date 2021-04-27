@@ -5,11 +5,9 @@ import { useState } from "react"
 
 import ScrollButton from "./scrollButton"
 import Section from "./section"
-import { boxShadow, colours } from "../constants"
+import { boxShadow, colours, mq } from "../constants"
 
 import { hex2rgba } from "../utils"
-
-const CIRCLE_SIZE = 275
 
 const Circle = styled.div({
     transition: "all 0.1s ease",
@@ -18,9 +16,6 @@ const Circle = styled.div({
     alignItems: "center",
     backgroundColor: hex2rgba(colours.blue, 0.7),
     color: colours.white,
-    width: CIRCLE_SIZE,
-    height: CIRCLE_SIZE,
-    borderRadius: CIRCLE_SIZE / 2,
     fontSize: 35,
     lineHeight: "52px",
     fontWeight: "bold",
@@ -28,16 +23,46 @@ const Circle = styled.div({
     padding: 20,
     textAlign: "center",
 
+    width: 275,
+    height: 275,
+    borderRadius: 275 / 2,
+
+    [mq[0]]: {
+        width: 200,
+        height: 200,
+        borderRadius: 200 / 2,
+        fontSize: 25,
+        lineHeight: "40px",
+    },
+    [mq[2]]: {
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 2,
+        fontSize: 12,
+        lineHeight: "26px",
+    },
+
     "&:hover": {
         backgroundColor: colours.blue,
         color: colours.white,
     },
 })
 const buttonStyles = css({
-    marginRight: 65,
+    marginRight: 30,
     marginBottom: 100,
     padding: 0,
-    borderRadius: CIRCLE_SIZE / 2,
+    borderRadius: 275 / 2,
+    [mq[0]]: {
+        borderRadius: 200 / 2,
+        marginRight: 30,
+        marginBottom: 50,
+    },
+    [mq[1]]: {
+        margin: 10,
+    },
+    [mq[2]]: {
+        borderRadius: 100 / 2,
+    },
 
     "&:focus": {
         outline: 0,
@@ -58,6 +83,10 @@ const WorkCarousel = ({ items, style, defaultBackground }) => {
                 padding: "25px 0",
                 boxShadow: boxShadow,
                 height: "100vh",
+
+                [mq[2]]: {
+                    height: "inherit",
+                },
             }}
         >
             <div
@@ -69,15 +98,28 @@ const WorkCarousel = ({ items, style, defaultBackground }) => {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         padding: "125px 0",
+
+                        [mq[2]]: {
+                            padding: "25px 0",
+                        },
                     },
                     style,
                 ]}
             >
                 <Section
                     css={{
-                        marginLeft: "30%",
+                        marginLeft: 475,
                         flexWrap: "wrap",
                         justifyContent: "center",
+                        padding: "0 50px",
+                        maxWidth: 1300,
+                        [mq[0]]: {
+                            margin: "350px auto 0",
+                            padding: 0,
+                        },
+                        [mq[2]]: {
+                            marginTop: 200,
+                        },
                     }}
                 >
                     {items.map(item => (

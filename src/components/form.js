@@ -3,7 +3,7 @@ import { css, jsx } from "@emotion/react"
 import styled from "@emotion/styled"
 import emailjs from "emailjs-com"
 
-import { colours } from "../constants"
+import { colours, mq } from "../constants"
 import Button from "./button"
 
 const Label = styled.label({
@@ -13,6 +13,10 @@ const Label = styled.label({
     marginTop: "1rem",
     fontSize: 28,
     lineHeight: "50px",
+
+    [mq[2]]: {
+        fontSize: 18,
+    },
 })
 const fieldStyles = css({
     display: "block",
@@ -25,6 +29,11 @@ const fieldStyles = css({
     fontSize: 28,
     lineHeight: "50px",
     resize: "none",
+
+    [mq[2]]: {
+        borderWidth: 5,
+        fontSize: 18,
+    },
 })
 const Input = styled.input(fieldStyles)
 const TextArea = styled.textarea(fieldStyles)
@@ -58,6 +67,10 @@ const Form = ({ style }) => {
             css={[
                 {
                     padding: "2rem",
+
+                    [mq[2]]: {
+                        padding: 0,
+                    },
                 },
                 style,
             ]}
@@ -75,6 +88,10 @@ const Form = ({ style }) => {
                         color: colours.red,
                         fontSize: 28,
                         marginLeft: 10,
+
+                        [mq[2]]: {
+                            fontSize: 18,
+                        },
                     }}
                 >
                     (Optional)
@@ -83,7 +100,13 @@ const Form = ({ style }) => {
                     type="text"
                     name="subject"
                     placeholder="Summary of your enquiry..."
-                    css={{ padding: "20px 20px" }}
+                    css={{
+                        padding: "20px 20px",
+
+                        [mq[2]]: {
+                            padding: "2px 20px",
+                        },
+                    }}
                 ></Input>
                 <Label>Message</Label>
                 <TextArea

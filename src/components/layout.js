@@ -7,7 +7,6 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 import "./base.css"
-// import { colours, gutterH, gutterV } from "../constants"
 
 // const OuterBorder = () => (
 //     <div

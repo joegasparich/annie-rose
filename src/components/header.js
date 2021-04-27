@@ -3,12 +3,10 @@ import { jsx, css } from "@emotion/react"
 import styled from "@emotion/styled"
 
 import ScrollButton from "./scrollButton"
-import { boxShadow, colours } from "../constants"
+import { boxShadow, colours, mq } from "../constants"
 
 import bannerImage from "../images/banner.svg"
 import logo from "../images/logo.svg"
-
-const CIRCLE_SIZE = 210
 
 const Circle = styled.div({
     display: "flex",
@@ -16,23 +14,39 @@ const Circle = styled.div({
     alignItems: "center",
     backgroundColor: colours.white,
     color: colours.magenta,
-    width: CIRCLE_SIZE,
-    height: CIRCLE_SIZE,
-    borderRadius: CIRCLE_SIZE / 2,
+    width: 200,
+    height: 200,
+    borderRadius: 200 / 2,
     fontSize: 38,
     fontWeight: "bold",
     textTransform: "uppercase",
     boxShadow: boxShadow,
+
+    [mq[1]]: {
+        width: 150,
+        height: 150,
+        borderRadius: 150 / 2,
+        fontSize: 25,
+    },
+    [mq[2]]: {
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 2,
+        fontSize: 19,
+    },
 })
 const buttonStyles = css({
-    marginRight: 126,
-    borderRadius: CIRCLE_SIZE / 2,
+    borderRadius: 200 / 2,
 
     "&:focus": {
         outline: 0,
     },
     "&:focus-visible": {
         boxShadow: `0 0 0 3px ${colours.pink}`,
+    },
+
+    [mq[1]]: {
+        borderRadius: 100 / 2,
     },
 })
 
@@ -55,29 +69,66 @@ const Header = () => (
             <div
                 css={{
                     display: "flex",
-                    flexDirection: "row",
                     alignItems: "center",
-                    justifyContent: "center",
                     transform: "translateY(-50%)",
+
+                    [mq[0]]: {
+                        flexDirection: "column",
+                        transform: "none",
+                    },
                 }}
             >
-                <img
-                    src={logo}
-                    alt="Annie Rose"
-                    style={{
-                        width: "30%",
-                        marginRight: 82,
+                <div
+                    css={{
+                        paddingLeft: 50,
+
+                        [mq[0]]: {
+                            height: 0,
+                            paddingLeft: 0,
+                            overflow: "visible",
+                            maxWidth: "50%",
+                        },
                     }}
-                />
-                <ScrollButton targetId="about" style={buttonStyles}>
-                    <Circle>About</Circle>
-                </ScrollButton>
-                <ScrollButton targetId="work" style={buttonStyles}>
-                    <Circle>Work</Circle>
-                </ScrollButton>
-                <ScrollButton targetId="contact" style={buttonStyles}>
-                    <Circle>Contact</Circle>
-                </ScrollButton>
+                >
+                    <img
+                        src={logo}
+                        alt="Annie Rose"
+                        css={{
+                            [mq[0]]: {
+                                transform: "translateY(-50%)",
+                                width: "100%",
+                                maxHeight: "30vh",
+                                paddingLeft: 0,
+                            },
+                        }}
+                    />
+                </div>
+                <div
+                    css={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-around",
+                        flex: 1,
+                        padding: "0 50px",
+
+                        [mq[0]]: {
+                            width: "100%",
+                            marginTop: "17vh",
+                            padding: 0,
+                        },
+                    }}
+                >
+                    <ScrollButton targetId="about" style={buttonStyles}>
+                        <Circle>About</Circle>
+                    </ScrollButton>
+                    <ScrollButton targetId="work" style={buttonStyles}>
+                        <Circle>Work</Circle>
+                    </ScrollButton>
+                    <ScrollButton targetId="contact" style={buttonStyles}>
+                        <Circle>Contact</Circle>
+                    </ScrollButton>
+                </div>
             </div>
         </div>
     </header>

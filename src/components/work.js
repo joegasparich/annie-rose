@@ -21,7 +21,7 @@ import thatsit3 from "../images/thatsit/thatsit3.jpg"
 import votemoji1 from "../images/votemoji/votemoji1.jpg"
 import votemoji2 from "../images/votemoji/votemoji2.jpg"
 import votemoji3 from "../images/votemoji/votemoji3.jpg"
-import { colours } from "../constants"
+import { colours, mq } from "../constants"
 import styled from "@emotion/styled"
 
 const items = [
@@ -92,6 +92,13 @@ const Circle = styled.div({
     textTransform: "uppercase",
     padding: 20,
     textAlign: "center",
+
+    [mq[2]]: {
+        width: 70,
+        height: 70,
+        borderRadius: 70 / 2,
+        fontSize: 12,
+    },
 })
 const buttonStyles = css({
     borderRadius: CIRCLE_SIZE / 2,
@@ -102,6 +109,11 @@ const buttonStyles = css({
     },
     "&:focus-visible": {
         boxShadow: `0 0 0 3px ${colours.white}`,
+    },
+
+    [mq[2]]: {
+        marginBottom: 20,
+        borderRadius: 70 / 2,
     },
 })
 
@@ -120,9 +132,29 @@ const Work = ({ style }) => (
             size={275}
             left={200}
             colour={colours.blue}
-            style={{ marginTop: 150, zIndex: 1 }}
+            style={{
+                marginTop: 150,
+                zIndex: 1,
+                [mq[2]]: {
+                    marginTop: 50,
+                },
+            }}
         />
-        <div css={{ position: "absolute", top: 480, left: 287.5, zIndex: 1 }}>
+        <div
+            css={{
+                position: "absolute",
+                top: 480,
+                left: 287.5,
+                zIndex: 1,
+                [mq[0]]: {
+                    top: 150,
+                    left: 70,
+                },
+                [mq[2]]: {
+                    top: 43,
+                },
+            }}
+        >
             <ScrollButton targetId="about" style={buttonStyles}>
                 <Circle>About</Circle>
             </ScrollButton>
@@ -138,6 +170,9 @@ const Work = ({ style }) => (
                 width: "100%",
                 display: "flex",
                 justifyContent: "center",
+                [mq[2]]: {
+                    height: 50,
+                },
             }}
         >
             <div
