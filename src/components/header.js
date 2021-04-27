@@ -1,42 +1,86 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react"
+import styled from "@emotion/styled"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+import ScrollButton from "./scrollButton"
+import { boxShadow, colours } from "../constants"
+
+import bannerImage from "../images/banner.svg"
+import logo from "../images/logo.svg"
+
+const CIRCLE_SIZE = 210
+
+const Circle = styled.div({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colours.white,
+    color: colours.magenta,
+    width: CIRCLE_SIZE,
+    height: CIRCLE_SIZE,
+    borderRadius: CIRCLE_SIZE / 2,
+    fontSize: 38,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    boxShadow: boxShadow,
+})
+const buttonStyles = css({
+    marginRight: 126,
+    borderRadius: CIRCLE_SIZE / 2,
+
+    "&:focus": {
+        outline: 0,
+    },
+    "&:focus-visible": {
+        boxShadow: `0 0 0 3px ${colours.pink}`,
+    },
+})
+
+const Header = () => (
+    <header>
+        <div
+            css={{
+                width: "100%",
+                height: "50vh",
+                backgroundColor: colours.pink,
+            }}
+        />
+        <div
+            css={{
+                backgroundImage: `url(${bannerImage})`,
+                height: "50vh",
+                backgroundPosition: "center",
+            }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+            <div
+                css={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transform: "translateY(-50%)",
+                }}
+            >
+                <img
+                    src={logo}
+                    alt="Annie Rose"
+                    style={{
+                        width: "30%",
+                        marginRight: 82,
+                    }}
+                />
+                <ScrollButton targetId="about" style={buttonStyles}>
+                    <Circle>About</Circle>
+                </ScrollButton>
+                <ScrollButton targetId="work" style={buttonStyles}>
+                    <Circle>Work</Circle>
+                </ScrollButton>
+                <ScrollButton targetId="contact" style={buttonStyles}>
+                    <Circle>Contact</Circle>
+                </ScrollButton>
+            </div>
+        </div>
+    </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
