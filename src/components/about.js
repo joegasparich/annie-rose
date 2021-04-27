@@ -19,7 +19,7 @@ const CIRCLE_SIZE = 100
 
 const Adobe = styled.img({
     margin: 0,
-    height: 124,
+    height: 100,
     [mq[1]]: {
         height: 90,
     },
@@ -81,12 +81,12 @@ const About = ({ style }) => (
             },
         ]}
     >
-        <Marker text="About" size={275} left={260} />
+        <Marker text="About" left={260} />
         <div
             css={{
                 position: "absolute",
                 display: "flex",
-                top: 200,
+                top: 175,
                 left: 15,
                 [mq[2]]: {
                     flexDirection: "column",
@@ -119,9 +119,7 @@ const About = ({ style }) => (
                     borderRadius: "15vw",
                     background: colours.pink,
                     border: `10px solid ${colours.white}`,
-                    marginLeft: 140,
-                    marginRight: 75,
-                    marginTop: 350,
+                    margin: "280px 100px 0",
                     boxShadow: boxShadow,
 
                     [mq[0]]: {
@@ -148,14 +146,15 @@ const About = ({ style }) => (
                 css={{
                     flexDirection: "column",
                     flex: 1,
+                    marginTop: 50,
                 }}
             >
                 <Section
                     css={{
-                        height: 300,
                         alignItems: "center",
                         justifyContent: "space-between",
                         marginRight: 155,
+                        marginBottom: 100,
 
                         [mq[0]]: {
                             justifyContent: "space-around",
@@ -164,7 +163,6 @@ const About = ({ style }) => (
                         },
                         [mq[1]]: {
                             margin: "20px 0",
-                            height: "initial",
                         },
                     }}
                 >
@@ -177,7 +175,7 @@ const About = ({ style }) => (
                 <div
                     css={{
                         flex: 1,
-                        marginRight: 230,
+                        marginRight: "10%",
                         [mq[0]]: {
                             marginRight: 0,
                             padding: "0 10%",
@@ -203,8 +201,8 @@ const About = ({ style }) => (
                         </h1>
                         <p
                             css={{
-                                fontSize: 40,
-                                lineHeight: "72px",
+                                fontSize: 30,
+                                lineHeight: "50px",
                                 color: colours.red,
                                 letterSpacing: 1.85,
                                 marginBottom: 50,

@@ -9,7 +9,7 @@ const Fork = ({ colour, mirror, style }) => (
     <div
         css={[
             {
-                height: 200,
+                height: 150,
                 width: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -26,7 +26,7 @@ const Fork = ({ colour, mirror, style }) => (
             css={{
                 border: `10px solid ${colour}`,
                 height: 60,
-                width: 120,
+                width: 90,
                 ...(mirror
                     ? {
                           borderBottomLeftRadius: 60,
@@ -90,7 +90,6 @@ const Project = ({
                 <div
                     css={{
                         width: "28vw",
-                        marginLeft: mirror ? 75 : 0,
                         overflow: "hidden",
 
                         [mq[0]]: {
@@ -102,7 +101,7 @@ const Project = ({
                     <h1
                         css={{
                             color: primaryColour,
-                            fontSize: 56,
+                            fontSize: 45,
                             textTransform: "uppercase",
 
                             [mq[0]]: {
@@ -118,8 +117,8 @@ const Project = ({
                     <p
                         css={{
                             color: primaryColour,
-                            fontSize: 30,
-                            lineHeight: "60px",
+                            fontSize: 22,
+                            lineHeight: "42px",
                             letterSpacing: 1.38,
 
                             [mq[0]]: {

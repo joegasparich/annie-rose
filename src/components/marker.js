@@ -2,21 +2,21 @@
 import { jsx } from "@emotion/react"
 import { colours, mq } from "../constants"
 
-const Marker = ({ text, colour, size, left, style }) => (
+const Marker = ({ text, left, colour, style }) => (
     <div
         css={[
             {
                 position: "absolute",
-                width: size,
-                height: size,
+                width: 200,
+                height: 200,
                 left: left,
-                borderRadius: size / 2,
-                border: `${25}px solid ${colour ?? colours.red}`,
+                borderRadius: 200 / 2,
+                border: `${20}px solid ${colour ?? colours.red}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 color: colour ?? colours.red,
-                fontSize: 50,
+                fontSize: 36,
                 fontWeight: "bold",
                 textTransform: "uppercase",
 
@@ -32,11 +32,11 @@ const Marker = ({ text, colour, size, left, style }) => (
                 "&::before": {
                     content: "''",
                     position: "absolute",
-                    width: left + 25 / 2,
-                    height: 25,
+                    width: left + 20 / 2,
+                    height: 20,
                     background: colour ?? colours.red,
-                    top: size / 2 - 50,
-                    left: -(left + 25),
+                    top: 70,
+                    left: -(left + 20),
 
                     [mq[2]]: {
                         width: "calc(50vw + 12px)",

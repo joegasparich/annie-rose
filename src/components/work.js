@@ -129,9 +129,8 @@ const Work = ({ style }) => (
         <div id="work" />
         <Marker
             text="Work"
-            size={275}
-            left={200}
             colour={colours.blue}
+            left={200}
             style={{
                 marginTop: 150,
                 zIndex: 1,
@@ -143,8 +142,8 @@ const Work = ({ style }) => (
         <div
             css={{
                 position: "absolute",
-                top: 480,
-                left: 287.5,
+                top: 400,
+                left: 250,
                 zIndex: 1,
                 [mq[0]]: {
                     top: 150,

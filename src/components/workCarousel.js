@@ -16,24 +16,18 @@ const Circle = styled.div({
     alignItems: "center",
     backgroundColor: hex2rgba(colours.blue, 0.7),
     color: colours.white,
-    fontSize: 35,
     lineHeight: "52px",
     fontWeight: "bold",
     textTransform: "uppercase",
     padding: 20,
     textAlign: "center",
 
-    width: 275,
-    height: 275,
-    borderRadius: 275 / 2,
+    width: 200,
+    height: 200,
+    borderRadius: 200 / 2,
+    fontSize: 25,
+    lineHeight: "40px",
 
-    [mq[0]]: {
-        width: 200,
-        height: 200,
-        borderRadius: 200 / 2,
-        fontSize: 25,
-        lineHeight: "40px",
-    },
     [mq[2]]: {
         width: 100,
         height: 100,
@@ -112,7 +106,7 @@ const WorkCarousel = ({ items, style, defaultBackground }) => {
                         flexWrap: "wrap",
                         justifyContent: "center",
                         padding: "0 50px",
-                        maxWidth: 1300,
+                        maxWidth: 1000,
                         [mq[0]]: {
                             margin: "350px auto 0",
                             padding: 0,

@@ -11,8 +11,8 @@ const Label = styled.label({
     color: colours.red,
     fontWeight: "bold",
     marginTop: "1rem",
-    fontSize: 28,
-    lineHeight: "50px",
+    fontSize: 24,
+    lineHeight: "48px",
 
     [mq[2]]: {
         fontSize: 18,
@@ -21,7 +21,7 @@ const Label = styled.label({
 const fieldStyles = css({
     display: "block",
     color: colours.red,
-    border: `10px solid ${colours.red}`,
+    border: `7px solid ${colours.red}`,
     background: colours.pink,
     padding: "2px 20px",
     outline: 0,
@@ -63,18 +63,7 @@ const Form = ({ style }) => {
     }
 
     return (
-        <div
-            css={[
-                {
-                    padding: "2rem",
-
-                    [mq[2]]: {
-                        padding: 0,
-                    },
-                },
-                style,
-            ]}
-        >
+        <div css={[style]}>
             <form onSubmit={sendEmail}>
                 <Label>Email</Label>
                 <Input
@@ -101,7 +90,7 @@ const Form = ({ style }) => {
                     name="subject"
                     placeholder="Summary of your enquiry..."
                     css={{
-                        padding: "20px 20px",
+                        padding: "10px 20px",
 
                         [mq[2]]: {
                             padding: "2px 20px",

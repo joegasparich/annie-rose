@@ -58,8 +58,7 @@ const Contact = ({ style }) => (
             style,
             {
                 backgroundColor: "white",
-                paddingTop: 160,
-                paddingBottom: 100,
+                padding: "100px 0",
                 position: "relative",
 
                 [mq[2]]: {
@@ -70,17 +69,16 @@ const Contact = ({ style }) => (
     >
         <Marker
             text="Contact"
-            size={275}
             left={260}
             style={{
-                fontSize: 41,
+                fontSize: 30,
             }}
         />
         <div
             css={{
                 position: "absolute",
-                top: 165,
-                left: 120,
+                top: 70,
+                left: 100,
                 zIndex: 1,
                 [mq[2]]: {
                     top: 45,
@@ -97,7 +95,7 @@ const Contact = ({ style }) => (
         </div>
         <Section
             css={{
-                margin: `0 150px`,
+                margin: "0 100px",
 
                 [mq[0]]: {
                     flexDirection: "column",
@@ -113,13 +111,14 @@ const Contact = ({ style }) => (
             <div
                 css={{
                     flex: 1,
-                    marginTop: 365,
-                    fontSize: 30,
-                    lineHeight: "55px",
+                    marginTop: 300,
+                    fontSize: 24,
+                    lineHeight: "48px",
                     letterSpacing: 1.38,
                     color: colours.red,
                     p: {
                         margin: 0,
+                        marginRight: 50,
                     },
 
                     [mq[0]]: {

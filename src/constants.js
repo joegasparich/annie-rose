@@ -23,5 +23,5 @@ export const colours = {
 
 export const boxShadow = "0px 3px 6px rgba(0,0,0,0.2)"
 
-const breakpoints = [1500, 800, 600]
+const breakpoints = [1200, 800, 600]
 export const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`)

@@ -3,9 +3,9 @@ import { colours, mq } from "../constants"
 
 const Button = styled.button({
     color: colours.red,
-    border: `10px solid ${colours.red}`,
+    border: `7px solid ${colours.red}`,
     background: colours.pink,
-    fontSize: 41,
+    fontSize: 28,
     fontWeight: "bold",
     padding: "15px 40px",
     float: "right",

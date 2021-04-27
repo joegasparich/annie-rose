@@ -6,7 +6,7 @@ import ScrollButton from "./scrollButton"
 import { boxShadow, colours, mq } from "../constants"
 
 import bannerImage from "../images/banner.svg"
-import logo from "../images/logo.svg"
+import logo from "../images/logo.png"
 
 const Circle = styled.div({
     display: "flex",
@@ -94,6 +94,7 @@ const Header = () => (
                         src={logo}
                         alt="Annie Rose"
                         css={{
+                            maxWidth: "30vw",
                             [mq[0]]: {
                                 transform: "translateY(-50%)",
                                 width: "100%",
