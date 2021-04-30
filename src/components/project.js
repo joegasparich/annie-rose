@@ -207,10 +207,11 @@ const Project = ({
                     src={images?.[1]}
                     alt={`${title} 2`}
                     css={{
-                        width: "40%",
+                        width: "40vw",
+                        height: "20vw",
                         background: colours.white,
                         boxShadow: boxShadow,
-                        // objectFit: "cover",
+                        objectFit: "cover",
 
                         [mq[0]]: {
                             width: "initial",
@@ -222,10 +223,11 @@ const Project = ({
                     src={images?.[2]}
                     alt={`${title} 3`}
                     css={{
-                        width: "40%",
+                        width: "40vw",
+                        height: "20vw",
                         background: colours.white,
                         boxShadow: boxShadow,
-                        // objectFit: "cover",
+                        objectFit: "cover",
 
                         [mq[0]]: {
                             width: "initial",
